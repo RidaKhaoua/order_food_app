@@ -18,7 +18,6 @@ const TextArea = <TFieldValues extends FieldValues>({
   placeholder,
   register,
   name,
-  onBlur,
   error,
 }: TTextArea<TFieldValues>) => {
   return (
