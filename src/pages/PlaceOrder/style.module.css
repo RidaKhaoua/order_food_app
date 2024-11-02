@@ -1,0 +1,37 @@
+.place_order {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding:80px 0;
+}
+
+.place_order_form h2 {
+    margin-bottom: 20px;
+}
+
+
+.place_order form {
+    width: 400px;
+    width: 100%;
+}
+
+.place_order form input {
+    transition: 0.5s ease-in-out;
+}
+
+.place_order form input:focus {
+    border: 1px solid rgba(255, 99, 71, 0.719);
+}
+
+@media (max-width:902px) {
+    .place_order_form {
+        width: 100%;
+    }
+}
+
+.multi_fields {
+    display: flex;
+    justify-content: space-between;
+}
+
+.multi_fields input {}

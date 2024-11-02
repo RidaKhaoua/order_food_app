@@ -1,0 +1,1 @@
+export type TStatus = "idle" | "pending" | "fullfield" | "failed";

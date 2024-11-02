@@ -1,0 +1,22 @@
+.food_quantity {
+    cursor: pointer;
+    position: absolute;
+    right: 8px;
+    bottom: 150px;
+    transform: translateX(180px);
+    transition: transform 0.5s ease-in-out;
+    
+}
+
+.food_counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 50px;
+}
+
+
+

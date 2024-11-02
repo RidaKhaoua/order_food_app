@@ -1,0 +1,19 @@
+.navbar_quantity {
+    position: relative;
+}
+
+.navbar_total {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    height: 18px;
+    width: 18px;
+    color: white;
+    background-color: tomato;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

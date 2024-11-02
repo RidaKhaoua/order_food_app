@@ -1,0 +1,9 @@
+.title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title_close {
+    cursor: pointer;
+    
+}

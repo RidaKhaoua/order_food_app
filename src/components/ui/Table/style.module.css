@@ -1,0 +1,54 @@
+.table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.table th {
+    font-weight: 300;
+    text-transform: capitalize;
+    padding: 10px 0;
+}
+
+.table img {
+    width: 50px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.table tbody td {
+    margin-bottom: 10px;
+    padding: 10px 0;
+}
+
+.table tbody tr {
+    transition: 0.4s ease-in-out;
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: #eee;
+}
+
+.table tbody tr:hover {
+    background-color: #ddd;
+}
+
+.tbody_price span {
+    background-color: tomato;
+    width: fit-content;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.tbody_remove img {
+    cursor: pointer;
+    width: 18px;
+    object-fit: cover;
+}
+
+

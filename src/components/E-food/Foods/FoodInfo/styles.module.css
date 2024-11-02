@@ -1,0 +1,42 @@
+.food_info {
+    padding: 14px 17px;
+    position: relative;
+}
+
+.food_name_rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.food_name_rating p {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.food_name_rating img {
+    width: 70px;
+}
+
+.food_desc {
+    font-size: 12px;
+    color: #676767;
+    margin-bottom: 18px;
+}
+
+.food_price {
+    font-size: 22px;
+    color: tomato;
+    font-weight: bold;
+}
+.food_cat {
+    background-color: tomato;
+    width: fit-content;
+    color: white;
+    font-size: 8px;
+    padding: 4px 10px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+
+}

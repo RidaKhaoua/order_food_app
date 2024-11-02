@@ -1,0 +1,21 @@
+
+.footer_left_logo {
+    width: 120px;
+}
+
+.footer_left_desc {
+    max-width: 500px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.footer_left_icons {
+    display: flex;
+    gap: 18px;
+    
+}
+
+.footer_left_icons img {
+    cursor: pointer;
+    width: 30px;
+}

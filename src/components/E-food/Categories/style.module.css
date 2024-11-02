@@ -1,0 +1,35 @@
+.categories {
+    padding: 30px 0;
+}
+
+.categories_heading h2 {
+    margin-bottom: 18px;
+}
+
+.categorie_list {
+    width: 68%;
+    overflow-x: scroll;
+    margin: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    /* Firefox */
+    cursor: grab;
+    padding: 0 20px;
+   
+}
+@media (max-width:771px) {
+    .categorie_list {
+        width: 100%;
+    }
+}
+
+.categorie_list_active {
+    cursor: grabbing;
+}
+
+.categories hr {
+    border: none;
+    background-color: #e2e2e2;
+    height: 1px;
+    margin-top: 20px;
+}

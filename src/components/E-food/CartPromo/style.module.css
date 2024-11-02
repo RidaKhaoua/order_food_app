@@ -1,0 +1,40 @@
+.cart_promo {
+    width: 400px;
+    max-width: 100%;
+    margin-top: 10px;
+}
+
+@media (max-width:771px) {
+    .cart_promo {
+        order: 1;
+    }
+}
+
+.cart_promo_title{
+    margin-bottom: 8px;
+}
+
+.cart_promo_input {
+    padding: 10px;
+
+}
+
+.cart_promo_input_button {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.cart_promo_input {
+    background-color: #ddd;
+    border: none;
+    padding: 10px 2px;
+    flex: 1;
+}
+
+.cart_promo_input input {
+    border: none;
+    padding: 4px 2px;
+    width: 100%;
+    background-color: transparent;
+    outline: none;
+}

@@ -1,0 +1,35 @@
+.category {
+    padding: 18px 0;
+    
+}
+
+
+
+.category_img {
+    width: 120px;
+    height: 120px;
+}
+
+.category_img img {
+    padding: 8px;
+    width: 100%;
+    height: 100%;
+    border-width: 3px;
+    border-style: solid;
+    border-color: transparent;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: border 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.category_img:hover img,
+.category_img_active img {
+    border-color: tomato;
+    transform: scale(1.1);
+}
+
+.category_title {
+    text-align: center;
+    text-transform: capitalize;
+    color: var(--primary);
+}

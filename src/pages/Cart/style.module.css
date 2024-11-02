@@ -1,0 +1,9 @@
+.cart {
+    padding: 40px 0;
+}
+
+.cart_total_promo {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

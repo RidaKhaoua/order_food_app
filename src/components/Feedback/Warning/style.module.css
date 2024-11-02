@@ -1,0 +1,14 @@
+.warning {
+    border-bottom: 0px;
+    background-color: orange;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.warning img {
+    width: 20px;
+}

@@ -1,0 +1,37 @@
+.food_item {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    box-shadow: 0px 0px 10px #00000015;
+    animation: topToBottom 2s ease-in-out ;
+    overflow: hidden;
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+}
+
+.food_item_clicked > div,
+.food_item:hover > div {
+    transform: translateX(0);
+}
+
+
+
+.food_like {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+    z-index: 8888;
+}
+
+@keyframes topToBottom {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}

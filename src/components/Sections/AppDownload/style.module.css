@@ -1,0 +1,20 @@
+.app_download {
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.app_download p {
+    font-size: max(2vw,2em);
+    font-weight: 500;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.app_download_platforms img{
+    width: max(30vw, 120px);
+    max-width: 180px;
+    height: 60px;
+}
