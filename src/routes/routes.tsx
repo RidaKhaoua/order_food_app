@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react";
 import Notfoud from "@pages/NotFound/Notfoud";
 import { LottieHandler, PageSuspenseFeedback } from "@components/Feedback";
 import PageProtected from "@components/Auth/PageProtected";
+import { basename } from "path";
 
 const Mainlayout = lazy(() => import("@layouts/MainLayout/MainLayout"));
 const HomePage = lazy(() => import("@pages/Home/HomePage"));
@@ -12,7 +13,7 @@ const Wishlist = lazy(() => import("@pages/Wishlist/Wishlist"));
 
 const routes = createBrowserRouter([
   {
-    path: "/",
+    path: "/order_food_app",
     errorElement: <Notfoud />,
     element: (
       <Suspense
@@ -72,7 +73,7 @@ const routes = createBrowserRouter([
 ]);
 
 const Routes = () => {
-  return <RouterProvider router={routes} />;
+  return <RouterProvider  router={routes} />;
 };
 
 export default Routes;
