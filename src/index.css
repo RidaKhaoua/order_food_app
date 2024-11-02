@@ -2,6 +2,7 @@
 :root {
   --primary : #49557e;
   --bg-primary-color:#49557e;
+  --border-color: #ddd;
 }
 
 * {

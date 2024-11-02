@@ -1,0 +1,16 @@
+.textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    resize: none;
+    outline: none;
+}
+
+.textarea_invalid {
+    border: 1px solid red;
+}
+
+.invalidTextArea {
+    color: red;
+}

@@ -12,7 +12,7 @@ const { navbar_quantity, navbar_total } = styles;
 
 function NavbarQuantity({ TotalQuantity, icon, page }: TNvbarQuantity) {
   return (
-    <Link to={`/${page}`}>
+    <Link to={`${import.meta.env.BASE_URL + page}`}>
       <div className={navbar_quantity}>
         <img src={icon} alt="icon" />
         <div className={navbar_total}>{TotalQuantity}</div>

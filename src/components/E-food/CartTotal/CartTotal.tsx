@@ -15,7 +15,7 @@ const { cart_totals, cart_total, delivery_info } = styles;
 
 const deliveryFee = 2;
 
-const PATH_NAME = "/placeOrder";
+const PATH_NAME = import.meta.env.BASE_URL +  "placeOrder";
 
 function CartTotal({ foods, accessToken, discountVal }: TCartTotal) {
   const navigate = useNavigate();
@@ -68,7 +68,7 @@ function CartTotal({ foods, accessToken, discountVal }: TCartTotal) {
             borderRadius: "2px",
             marginTop: "10px",
           }}
-          onClick={() => navigate("/placeOrder")}>
+          onClick={() => navigate(PATH_NAME)}>
           PROCED TO CHECKOUT
         </Button>
       ) : accessToken ? (

@@ -1,6 +1,6 @@
 .input input {
     width: 100%;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     border-radius: 5px;
     padding: 13px 10px;
     outline: none;

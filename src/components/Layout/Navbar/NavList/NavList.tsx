@@ -11,7 +11,8 @@ type TNavList = {
 };
 
 const { navbar_list } = styles;
-const LINK_IS_Home = "Home";
+
+const LINK_IS_Home = "home";
 
 const  NavList = memo(({ data, activeLink, handleActiveLink }: TNavList) => {
  
@@ -20,7 +21,7 @@ const  NavList = memo(({ data, activeLink, handleActiveLink }: TNavList) => {
       <li key={item} onClick={() => handleActiveLink(item)}>
         <Link
           key={item}
-          to={item === LINK_IS_Home ? "/" : item}
+          to={item === LINK_IS_Home ? "/order_food_app" : item}
           className={item === activeLink ? styles["active-link"] : ""}>
           {item}
         </Link>

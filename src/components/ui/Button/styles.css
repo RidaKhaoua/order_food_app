@@ -1,6 +1,7 @@
 button {
     transition: 0.5 ease-in-out;
     cursor: pointer;
+    border: none;
     
 }
 

@@ -43,7 +43,7 @@ function Navbar() {
     <nav className={navbar}>
       <Container>
         <div className={navbar_content}>
-          <Link to="/">
+          <Link to="/order_food_app">
             <Img className={navbar_logo} imgName={assets.logo} title="logo" />
           </Link>
           <div

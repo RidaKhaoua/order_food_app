@@ -1,4 +1,4 @@
-export const navData: string[] = ["Home", "Menu", "Mobile-app", "Contact-us"];
+export const navData: string[] = ["home", "menu", "contact-us"];
 
 export const footerLinks: string[] = [
   "home",

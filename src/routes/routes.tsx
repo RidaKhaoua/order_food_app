@@ -10,10 +10,10 @@ const HomePage = lazy(() => import("@pages/Home/HomePage"));
 const CartPage = lazy(() => import("@pages/Cart/Cart"));
 const PlaceOrder = lazy(() => import("@pages/PlaceOrder/PlaceOrder"));
 const Wishlist = lazy(() => import("@pages/Wishlist/Wishlist"));
-
+const ContactUs = lazy(() => import("@pages/Contact-us/ContactUs"))
 const routes = createBrowserRouter([
   {
-    path: "/order_food_app",
+    path: import.meta.env.BASE_URL,
     errorElement: <Notfoud />,
     element: (
       <Suspense
@@ -65,6 +65,14 @@ const routes = createBrowserRouter([
         element: (
           <PageSuspenseFeedback>
             <PlaceOrder />
+          </PageSuspenseFeedback>
+        ),
+      },
+      {
+        path: "contact-us",
+        element: (
+          <PageSuspenseFeedback>
+            <ContactUs />
           </PageSuspenseFeedback>
         ),
       },

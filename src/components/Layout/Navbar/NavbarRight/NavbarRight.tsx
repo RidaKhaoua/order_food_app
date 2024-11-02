@@ -17,6 +17,7 @@ const btnStyle = {
   color: "black",
   cursor: "pointer",
   transition: "0.5s ease-in-out",
+  border: "1px solid #ddd"
 };
 
 type TNavbarRight = {
