@@ -4,7 +4,7 @@
     height: 500px;
     border-radius: 10px;
     color: white;
-    background-image: url("/img/header_img.png");
+    background-image: url("/src/img/header_img.png");
     background-size: cover;
     background-repeat: no-repeat;
     margin: 50px 0;
