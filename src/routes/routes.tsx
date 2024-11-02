@@ -3,7 +3,7 @@ import { lazy, Suspense } from "react";
 import Notfoud from "@pages/NotFound/Notfoud";
 import { LottieHandler, PageSuspenseFeedback } from "@components/Feedback";
 import PageProtected from "@components/Auth/PageProtected";
-import { basename } from "path";
+
 
 const Mainlayout = lazy(() => import("@layouts/MainLayout/MainLayout"));
 const HomePage = lazy(() => import("@pages/Home/HomePage"));
