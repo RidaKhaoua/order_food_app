@@ -2,7 +2,7 @@ import styles from "./style.module.css";
 import { TCategory } from "@types";
 import { GridList } from "@components/Common";
 import Category from "./Category/Category";
-import  { useRef, useState } from "react";
+import  { memo, useRef, useState } from "react";
 
 type TCategorieList = {
   data: TCategory[];
@@ -75,4 +75,4 @@ function CategorieList({ data, activeLink, handleActiveLink, handleGetFoodByCat 
   );
 }
 
-export default CategorieList;
+export default memo(CategorieList);

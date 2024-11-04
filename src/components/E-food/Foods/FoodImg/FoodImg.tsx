@@ -1,4 +1,5 @@
 
+import { memo } from "react";
 import styles from "./styles.module.css";
 
 const {food_img} = styles
@@ -15,4 +16,4 @@ function FoodImg({img}: TFoodImg) {
   )
 }
 
-export default FoodImg
+export default memo(FoodImg)

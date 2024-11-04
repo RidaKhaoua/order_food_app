@@ -7,6 +7,7 @@ import CategorieList from "./CategorieList";
 import useActiveLink from "@hooks/useActiveLink";
 import { useAppDispatch } from "@store/hooks";
 import { actGetFoodListByCategory } from "@store/foods/foodsSlice";
+import { useCallback } from "react";
 
 type TCategories = {
   data: TCategory[];
@@ -20,9 +21,9 @@ function Categories({ data, status, error }: TCategories) {
   const { activeLink, handleActiveLink } = useActiveLink("All");
   const dispatch = useAppDispatch();
   
-  const handleGetFoodByCat = (catName: string) => {
+  const handleGetFoodByCat = useCallback((catName: string) => {
     dispatch(actGetFoodListByCategory(catName));
-  }
+  },[dispatch])
 
   return (
     <Loading status={status} error={error}>

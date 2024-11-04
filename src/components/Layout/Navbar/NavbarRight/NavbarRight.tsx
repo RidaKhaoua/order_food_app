@@ -9,6 +9,7 @@ import { resetAuth } from "@store/auth/authSlice";
 import NavbarQuantity from "../NavbarQuatity/NavbarQuantity";
 import { cleanWishlist } from "@store/wishlist/wishlistSlice";
 import toast from "react-hot-toast";
+import { memo } from "react";
 
 const btnStyle = {
   backgroundColor: "transparent",
@@ -21,7 +22,7 @@ const btnStyle = {
 };
 
 type TNavbarRight = {
-  setIsVisibleShowLoginPopUp: (val: boolean) => void;
+  handleVisibleShowLoginPopUp: () => void;
 };
 
 const {
@@ -29,14 +30,12 @@ const {
   navbar_right_login,
 } = styles;
 
-function NavbarRight({ setIsVisibleShowLoginPopUp }: TNavbarRight) {
+function NavbarRight({ handleVisibleShowLoginPopUp }: TNavbarRight) {
   const accessToken = useAppSelectore((state) => state.auth.accessToken);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
-  const handelShowLogin = () => {
-    setIsVisibleShowLoginPopUp(true);
-  };
+ 
 
   const cartTotalQuantity = useAppSelectore(cartTotalQuantitySelectore);
   const wishlistQuantity = useAppSelectore(
@@ -66,7 +65,7 @@ function NavbarRight({ setIsVisibleShowLoginPopUp }: TNavbarRight) {
             type="button"
             disabled={false}
             style={btnStyle}
-            onClick={handelShowLogin}>
+            onClick={handleVisibleShowLoginPopUp}>
             Sing In
           </Button>
         ) : (
@@ -92,4 +91,5 @@ function NavbarRight({ setIsVisibleShowLoginPopUp }: TNavbarRight) {
   );
 }
 
-export default NavbarRight;
+export default memo(NavbarRight);
+

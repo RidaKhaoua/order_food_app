@@ -3,7 +3,7 @@ import { assets } from "@assets";
 import styles from "./style.module.css";
 
 import { useAppSelectore } from "@store/hooks";
-import React, { useEffect } from "react";
+import React, { memo, useEffect } from "react";
 
 const { food_add_quantity, food_counter, food_quantity } = styles;
 
@@ -52,4 +52,4 @@ const  FoodAddQuantity = React.memo(({id, handleAddFood, handleMinusFood, setIsC
   );
 })
 
-export default FoodAddQuantity;
+export default memo(FoodAddQuantity);

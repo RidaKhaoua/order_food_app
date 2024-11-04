@@ -1,4 +1,5 @@
 
+import { memo } from 'react';
 import styles from './style.module.css';
 
 const {spinner} = styles;
@@ -9,4 +10,4 @@ function Spinner() {
   )
 }
 
-export default Spinner
+export default memo(Spinner)

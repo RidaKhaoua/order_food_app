@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import  { memo, useCallback, useEffect, useState } from "react";
 import styles from "./style.module.css";
 import { Container, Img } from "@components/ui";
 import { assets } from "@assets";
@@ -29,9 +29,13 @@ function Navbar() {
   const [isVisibleMenu, setisVisibleMenu] = useState(false);
   const dispatch = useAppDispatch();
 
-  const handleVisibleMenu = () => {
+  const handleVisibleMenu = useCallback(() => {
     setisVisibleMenu((prev) => !prev);
-  };
+  },[]);
+
+  const handleVisibleShowLoginPopUp = useCallback(() => {
+    setIsVisibleShowLoginPopUp(true);
+  },[])
 
   useEffect(() => {
     if(accessToken) {
@@ -59,7 +63,7 @@ function Navbar() {
               handleActiveLink={handleActiveLink}
             />
             <NavbarRight
-              setIsVisibleShowLoginPopUp={setIsVisibleShowLoginPopUp}
+              handleVisibleShowLoginPopUp={handleVisibleShowLoginPopUp}
             />
           </div>
           <div className={navbar_menu} onClick={handleVisibleMenu}>
@@ -75,4 +79,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default memo(Navbar);

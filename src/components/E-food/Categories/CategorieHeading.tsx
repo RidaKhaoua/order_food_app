@@ -1,3 +1,4 @@
+import { memo } from "react";
 import styles from "./style.module.css";
 
 function CategorieHeading() {
@@ -9,4 +10,4 @@ function CategorieHeading() {
   )
 }
 
-export default CategorieHeading
+export default memo(CategorieHeading)

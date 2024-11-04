@@ -31,4 +31,4 @@ const  NavList = memo(({ data, activeLink, handleActiveLink }: TNavList) => {
   return <ul className={navbar_list}>{displayData}</ul>;
 })
 
-export default NavList;
+export default memo(NavList);

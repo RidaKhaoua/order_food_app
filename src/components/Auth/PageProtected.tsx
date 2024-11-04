@@ -10,7 +10,7 @@ function PageProtected({children}: TPageProtected) {
     const accessToken = useAppSelectore(state => state.auth.accessToken);
   return (
     <>
-        {accessToken ? children : <Navigate to="/?message=Login_required"/>}
+        {accessToken ? children : <Navigate to={`${import.meta.env.BASE_URL}/?message=Login_required`}/>}
     </>
   )
 }

@@ -1,5 +1,6 @@
 
 
+import { memo } from "react";
 import styles from "./styles.module.css";
 import { assets } from '@assets';
 
@@ -33,4 +34,4 @@ function FoodInfo({name, description, price, category}:TFoodInfo) {
   )
 }
 
-export default FoodInfo
+export default memo(FoodInfo)

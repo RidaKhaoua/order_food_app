@@ -56,7 +56,7 @@ function FoodItem({
     } else {
       handleShowModal()
     }
-  },[dispatch, isAuthenticated, handleShowModal]);
+  },[dispatch, handleShowModal, id]);
 
   return (
     <div className={`${food_item} ${isClicked ? food_item_clicked : ""}`}>
