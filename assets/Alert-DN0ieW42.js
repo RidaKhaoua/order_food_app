@@ -1,1 +1,0 @@
-import{r as s,j as a}from"./index-kczTQTv2.js";import"./singInShema-ZTJNy8zx.js";const u=t=>{const[e,r]=s.useState(t),i=s.useCallback(n=>{r(n)},[]);return{activeLink:e,handleActiveLink:i}};function l({className:t,text:e}){return a.jsx("div",{className:`alert ${t}`,children:e})}export{l as A,u};
