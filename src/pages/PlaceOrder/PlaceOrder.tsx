@@ -8,7 +8,7 @@ import { useAppSelectore } from "@store/hooks";
 const { place_order, place_order_form, multi_fields } = styles;
 
 function PlaceOrder() {
-  const { fullfoodInfo, accessToken } = usePlaceOrder();
+  const { fullfoodInfo, jwt } = usePlaceOrder();
   const { register, errors } = usePlaceOrder();
   const discountPrice = useAppSelectore(
     (state) => state.foodList.discountPrice
@@ -76,7 +76,7 @@ function PlaceOrder() {
 
       <CartTotal
         foods={fullfoodInfo}
-        accessToken={accessToken}
+        accessToken={jwt}
         discountVal={discountPrice}
       />
     </div>

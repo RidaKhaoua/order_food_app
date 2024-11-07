@@ -63,9 +63,11 @@ const routes = createBrowserRouter([
       {
         path: "placeOrder",
         element: (
+          <PageProtected>
           <PageSuspenseFeedback>
             <PlaceOrder />
           </PageSuspenseFeedback>
+          </PageProtected>
         ),
       },
       {

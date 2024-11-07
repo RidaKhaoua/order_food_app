@@ -15,9 +15,11 @@ function HomePage() {
   return (
     <>
       {searchParams.get("message") ? toast(searchParams.get("message"),{
+        icon: "🤷‍♀️",
         style:{
-          backgroundColor: "orangered",
-          color:"white"
+          backgroundColor: "orange",
+          color:"white",
+          
         }
       }) : ""}
       <Herosection />
