@@ -78,7 +78,7 @@ function NavbarRight({ handleVisibleShowLoginPopUp }: TNavbarRight) {
               dispatch(resetAuth())
               dispatch(cleanWishlist())
               if (searchParams.get("message")) setSearchParams("");
-              navigate("/")
+              navigate(import.meta.env.BASE_URL)
               toast("you are Loged out.",{
                 icon:"✌️"
               })

@@ -1,6 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { RootState } from "@store/index";
-import { TFood } from "@types";
 
 import axiosErrorHandler from "@utils/axiosErrorHandler";
 import axios from "axios";

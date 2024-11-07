@@ -6,19 +6,20 @@ import {
   CategoriesSection,
 } from "@components/Sections";
 import { useSearchParams } from "react-router-dom";
-import { Alert } from "@components/Common";
+
+import toast from "react-hot-toast";
 
 
 function HomePage() {
   const [searchParams] = useSearchParams();
   return (
     <>
-      {searchParams.get("message") && (
-        <Alert
-          className="warning"
-          text={searchParams.get("message") as string}
-        />
-      )}
+      {searchParams.get("message") ? toast(searchParams.get("message"),{
+        style:{
+          backgroundColor: "orangered",
+          color:"white"
+        }
+      }) : ""}
       <Herosection />
       <CategoriesSection />
       <FoodSection />
