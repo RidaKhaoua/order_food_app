@@ -13,7 +13,7 @@ type TUseLogin = {
 }
 
 const useLogin = ({showLoginPopUp}: TUseLogin) => {
-    const {status, error, accessToken} = useAppSelectore(state => state.auth)
+    const {status, error, jwt} = useAppSelectore(state => state.auth)
     const [searchParams, setSearchParams] = useSearchParams()
     const dispatch = useAppDispatch();
     const {
@@ -70,7 +70,7 @@ const useLogin = ({showLoginPopUp}: TUseLogin) => {
         errors,
         status,
         error,
-        accessToken,
+        jwt,
     }
 }
 

@@ -6,10 +6,10 @@ const useFoodList = () => {
     const dispatch = useAppDispatch();
     const {foodList, error, status} = useAppSelectore(state => state.foodList);
     const {foodIds} = useAppSelectore(state => state.wishlist);
-    const accessToken = useAppSelectore(state => state.auth.accessToken);
+    const jwt = useAppSelectore(state => state.auth.jwt);
     const fullfoodInfo = foodList.map(food => ({
         ...food,
-        isAuthenticated: accessToken ? true : false,
+        isAuthenticated: jwt ? true : false,
         isLiked: foodIds.includes(food.id as number) 
     }))
 

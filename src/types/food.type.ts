@@ -1,5 +1,6 @@
 export type TFood = {
-    id: string | number,
+    id: number,
+    documentId: string,
     name: string,
     image: string,
     price: number,

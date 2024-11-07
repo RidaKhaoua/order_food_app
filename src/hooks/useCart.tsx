@@ -15,10 +15,10 @@ const useCart = () => {
   );
 
   const discountPrice = useAppSelectore(state => state.foodList.discountPrice);
-  const fullfoodInfo = foods.map((food) => ({
+  const fullfoodInfo = foods.length > 0 ? foods.map((food) => ({
     ...food,
-    quantity: foodIdAndQuantity[food.id] || 0,
-  }));
+    quantity: foodIdAndQuantity[food.documentId] || 0,
+  })) : [];
 
   useEffect(() => {
     const promise = dispatch(actGetCartProducts());
@@ -28,16 +28,16 @@ const useCart = () => {
     };
   }, [dispatch]);
 
-  const handleAddFood = (id: number | string) => {
-    dispatch(addFoodToCart(id));
+  const handleAddFood = (documentId: string) => {
+    dispatch(addFoodToCart(documentId));
   };
 
-  const handleMinusFood = (id: number | string) => {
-    dispatch(minusFoodToCart(id));
+  const handleMinusFood = (documentId:string) => {
+    dispatch(minusFoodToCart(documentId));
   };
 
-  const handleRemoveFood = (id: number |string) => {
-    dispatch(removeFoodFromCart(id));
+  const handleRemoveFood = (documentId:string) => {
+    dispatch(removeFoodFromCart(documentId));
   }
 
   return {

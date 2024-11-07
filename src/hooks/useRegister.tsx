@@ -14,7 +14,7 @@ type TUseRegister = {
 }
 
 const useRegister = ({closeLoginPopUp}:TUseRegister) => {
-  const {status, user, accessToken, error} = useAppSelectore(state => state.auth)
+  const {status, user, jwt, error} = useAppSelectore(state => state.auth)
   const navigate = useNavigate();
   // const [searchParams, setSearchParams] = useSearchParams();
 
@@ -51,7 +51,8 @@ const useRegister = ({closeLoginPopUp}:TUseRegister) => {
   }
 
   const submitFormRegister : SubmitHandler<singUpType> = async(data) => {
-    dispatch(actRegister(data)).
+    const {username, password, email} = data;
+    dispatch(actRegister({username, password, email})).
     unwrap()
     .then(()=> {
       closeLoginPopUp();
@@ -74,7 +75,7 @@ const useRegister = ({closeLoginPopUp}:TUseRegister) => {
     status,
     error,
     user,
-    accessToken,
+    jwt,
     handleSubmit,
     register,
     errors,

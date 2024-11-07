@@ -21,6 +21,7 @@ type TFoodItem = TFood & {
 function FoodItem({
   id,
   name,
+  documentId,
   image,
   price,
   description,
@@ -71,7 +72,7 @@ function FoodItem({
       </div>
       <FoodImg img={image} />
       <FoodAddQuantity
-        id={id}
+        documentId={documentId}
         handleAddFood={handleAddFood}
         handleMinusFood={handleMinusFood}
         setIsClicked={setIsClicked}

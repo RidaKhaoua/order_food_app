@@ -14,8 +14,8 @@ type TTAble = {
 
 function Table({headers, data}: TTAble) {
   const dispatch = useAppDispatch();
-  const handleRemoveFood = (id: number | string) => {
-      dispatch(removeFoodFromCart(id));
+  const handleRemoveFood = (documentId: string) => {
+      dispatch(removeFoodFromCart(documentId));
   }
   return (
     <table className={table}>

@@ -27,28 +27,28 @@ const cartSlice = createSlice({
     },
 
     addFoodToCart: (state, action) => {
-      const id = action.payload;
-      if (state.foodIdAndQuantity[id]) {
-        state.foodIdAndQuantity[id] += 1;
+      const documentId = action.payload;
+      if (state.foodIdAndQuantity[documentId]) {
+        state.foodIdAndQuantity[documentId] += 1;
       } else {
-        state.foodIdAndQuantity[id] = 1;
+        state.foodIdAndQuantity[documentId] = 1;
       }
     },
 
     minusFoodToCart: (state, action) => {
-      const id = action.payload;
-      if (state.foodIdAndQuantity[id] > 0) {
-        state.foodIdAndQuantity[id] -= 1;
-        if (state.foodIdAndQuantity[id] === 0) {
-          delete state.foodIdAndQuantity[id];
-          state.foods = state.foods.filter((item) => item.id !== id);
+      const documentId = action.payload;
+      if (state.foodIdAndQuantity[documentId] > 0) {
+        state.foodIdAndQuantity[documentId] -= 1;
+        if (state.foodIdAndQuantity[documentId] === 0) {
+          delete state.foodIdAndQuantity[documentId];
+          state.foods = state.foods.filter((item) => item.id !== documentId);
         }
       }
     },
     removeFoodFromCart: (state, action) => {
-      const id = action.payload;
-      delete state.foodIdAndQuantity[id];
-      state.foods = state.foods.filter((item) => item.id !== id);
+      const documentId = action.payload;
+      delete state.foodIdAndQuantity[documentId];
+      state.foods = state.foods.filter((item) => item.documentId !== documentId);
     },
   },
   extraReducers: (builder) => {

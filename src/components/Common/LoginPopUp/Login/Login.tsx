@@ -33,8 +33,8 @@ function Login({
           type="text"
           placeHolder="example@mail.com"
           register={register}
-          name="email"
-          error={errors.email?.message}
+          name="identifier"
+          error={errors.identifier?.message}
         />
 
         <Input

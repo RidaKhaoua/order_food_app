@@ -9,7 +9,7 @@ function Theaders({headers}:THeaders) {
   return (
     <thead>
         <tr>
-            {headers.map(headName => <th>{headName}</th>)}
+            {headers.map(headName => <th key={headName}>{headName}</th>)}
         </tr>
     </thead>
   )

@@ -22,7 +22,7 @@ const {
 } = styles;
 
 function Navbar() {
-  const accessToken = useAppSelectore(state => state.auth.accessToken);
+  const jwt = useAppSelectore(state => state.auth.jwt);
 
   const { activeLink, handleActiveLink } = useActiveLink("home");
   const [isVisibleShowLoginPopUp, setIsVisibleShowLoginPopUp] = useState(false);
@@ -38,10 +38,10 @@ function Navbar() {
   },[])
 
   useEffect(() => {
-    if(accessToken) {
+    if(jwt) {
       dispatch(actGetLikedFoods("foodIds"));
     }
-  },[dispatch, accessToken])
+  },[dispatch, jwt])
 
   return (
     <nav className={navbar}>

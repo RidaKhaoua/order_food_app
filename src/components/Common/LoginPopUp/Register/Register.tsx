@@ -41,17 +41,11 @@ function Register({
       <Input
         type="text"
         register={register}
-        name="firstName"
-        placeHolder="FirstName"
-        error={errors.firstName?.message}
+        name="username"
+        placeHolder="Username"
+        error={errors.username?.message}
       />
-      <Input
-        type="text"
-        register={register}
-        name="lastName"
-        placeHolder="LastName"
-        error={errors.lastName?.message}
-      />
+
       <Input
         type="email"
         register={register}

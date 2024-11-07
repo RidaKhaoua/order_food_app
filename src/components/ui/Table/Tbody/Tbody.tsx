@@ -4,7 +4,7 @@ import { assets } from "@assets";
 import styles from "../style.module.css";
 type TBody = {
   data: TFood[];
-  handleRemoveFood: (id: number | string) => void;
+  handleRemoveFood: (documentId: string) => void;
 };
 
 const { tbody_remove, tbody_price } = styles;
@@ -26,7 +26,7 @@ function Tbody({ data, handleRemoveFood }: TBody) {
             <td>{(item.price * (item.quantity || 1)).toFixed(2)}$</td>
             <td
               className={tbody_remove}
-              onClick={() => handleRemoveFood(item.id)}>
+              onClick={() => handleRemoveFood(item.documentId)}>
               <img src={assets.cross_icon} alt="cross icon" />
             </td>
           </tr>

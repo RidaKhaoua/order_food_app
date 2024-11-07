@@ -4,7 +4,7 @@ import { checkoutShema, checkoutType } from "@validation/checkoutShema"
 import { useForm } from "react-hook-form"
 
 const usePlaceOrder = () => {
-    const accessToken = useAppSelectore(state => state.auth.accessToken);
+    const jwt = useAppSelectore(state => state.auth.jwt);
     const { status, error, foodIdAndQuantity, foods } = useAppSelectore(
         (state) => state.cart
       );
@@ -27,7 +27,7 @@ const usePlaceOrder = () => {
         status,
         error,
         fullfoodInfo,
-        accessToken,
+        jwt,
         handleSubmit,
         register,
         errors

@@ -1,14 +1,7 @@
 import { z } from "zod";
 
 const singUpShema = z.object({
-  firstName: z
-    .string()
-    .min(1, { message: "firstName is Required" })
-    .max(15, { message: "The size of FirstName is Long" }),
-  lastName: z
-    .string()
-    .min(1, { message: "lastName is Required" })
-    .max(15, { message: "The size of LastName is long" }),
+  username: z.string().min(1, {message: "You should enter userName."}),
   email: z.string().email(),
   password: z
     .string()

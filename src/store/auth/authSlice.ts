@@ -1,26 +1,19 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 import { createSlice } from "@reduxjs/toolkit";
-import { isString, TStatus } from "@types";
+import { isString, TStatus, TUser } from "@types";
 import actRegister from "./act/actRegister";
 import actLogin from "./act/actLogin";
 
 interface IAuth {
-    user : {
-        id: number,
-        firstName: string,
-        lastName: string,
-        email: string,
-        password: string,
-        confirmPassword: string
-    } | null,
-    accessToken : null | string,
+    user : TUser| null,
+    jwt : null | string,
     status: TStatus,
     error: null | string
 }
 
 const initialState: IAuth = {
     user: null,
-    accessToken: null,
+    jwt: null,
     status: "idle",
     error: null
 }
@@ -35,7 +28,7 @@ const authSlice = createSlice({
         },
         resetAuth: (state) => {
             state.user = null
-            state.accessToken = null;
+            state.jwt = null;
             state.status = "idle";
         }
     },
@@ -48,7 +41,7 @@ const authSlice = createSlice({
         builder.addCase(actRegister.fulfilled, (state, action) => {
             state.status = "fullfield";
             state.user = action.payload.user;
-            state.accessToken = action.payload.accessToken;
+            state.jwt = action.payload.jwt;
         }),
         builder.addCase(actRegister.rejected, (state, action) => {
             state.status = "failed";
@@ -64,7 +57,7 @@ const authSlice = createSlice({
         builder.addCase(actLogin.fulfilled, (state, action) => {
             state.status = "fullfield";
             state.user = action.payload.user;
-            state.accessToken = action.payload.accessToken;
+            state.jwt = action.payload.accessToken;
         }),
         builder.addCase(actLogin.rejected, (state, action) => {
             state.status = "failed";
