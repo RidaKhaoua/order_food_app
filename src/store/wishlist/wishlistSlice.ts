@@ -37,6 +37,7 @@ const wishlistSlice = createSlice({
         state.status = "fullfield";
         if (action.payload) {
           const { data, dataType } = action.payload;
+          console.log(data)
           if (dataType === "foodIds") {
             state.foodIds = data as number[];
           } else if (dataType === "wishlistFood") {

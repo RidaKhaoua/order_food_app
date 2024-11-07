@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { RootState } from "@store/index";
 import { TFood } from "@types";
+
 import axiosErrorHandler from "@utils/axiosErrorHandler";
 import axios from "axios";
 
@@ -11,31 +12,36 @@ const actGetLikedFoods = createAsyncThunk(
   async (data: TData, thunkAPI) => {
     const { rejectWithValue, getState, signal } = thunkAPI;
     const { auth } = getState() as RootState;
-
+    console.log(auth.user?.id)
     try {
-      const userWishlist = axios.get<{ foodId: number }[]>(
-        `/wishlist?userId=${auth.user?.id}`,
-        { signal }
+      const userWishlist = axios.get<{data:{ foodId: number }[]}>(
+        `/wishlists?filters[userId][$eq]=${auth.user?.id}`,{
+          headers:{
+            Authorization: `Bearer ${auth.jwt}`
+          }
+          , signal
+        },
+       
       );
       
-      if (!(await userWishlist).data.length) {
+      if (!(await userWishlist).data.data.length) {
         return { data: [], dataType: "empty" };
       }
 
       if (data === "foodIds") {
-        const arrayOfFoodId = (await userWishlist).data.map(
+        const arrayOfFoodId = (await userWishlist).data.data.map(
           (item) => item.foodId
         );
         return { data: arrayOfFoodId, dataType: "foodIds" };
 
       } else if (data === "wishlistFood") {
-        const getFoodIdsAndConcatinated = (await userWishlist).data
-          .map((item) => `id=${item.foodId}`)
+        const getFoodIdsAndConcatinated = (await userWishlist).data.data
+          .map((item) => `filters[id][$in]=${item.foodId}`)
           .join("&");
-        const response = axios.get<TFood[]>(
-          `/foodlist?${getFoodIdsAndConcatinated}`
+        const response = axios.get(
+          `/foods?${getFoodIdsAndConcatinated}`
         );
-        return { data: (await response).data, dataType: "wishlistFood" };
+        return { data: (await response).data.data, dataType: "wishlistFood" };
       }
     } catch (error) {
       return rejectWithValue(axiosErrorHandler(error));

@@ -57,7 +57,7 @@ const authSlice = createSlice({
         builder.addCase(actLogin.fulfilled, (state, action) => {
             state.status = "fullfield";
             state.user = action.payload.user;
-            state.jwt = action.payload.accessToken;
+            state.jwt = action.payload.jwt;
         }),
         builder.addCase(actLogin.rejected, (state, action) => {
             state.status = "failed";

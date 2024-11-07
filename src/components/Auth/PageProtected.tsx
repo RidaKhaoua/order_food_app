@@ -7,10 +7,11 @@ type TPageProtected = {
 }
 
 function PageProtected({children}: TPageProtected) {
-    const accessToken = useAppSelectore(state => state.auth.accessToken);
+    const accessToken = useAppSelectore(state => state.auth.jwt);
+    console.log(accessToken)
   return (
     <>
-        {accessToken ? children : <Navigate to={`${import.meta.env.BASE_URL}/?message=Login_required`}/>}
+        {accessToken ? children : <Navigate to={`${import.meta.env.BASE_URL}?message=Login_required`}/>}
     </>
   )
 }

@@ -31,7 +31,7 @@ const {
 } = styles;
 
 function NavbarRight({ handleVisibleShowLoginPopUp }: TNavbarRight) {
-  const accessToken = useAppSelectore((state) => state.auth.accessToken);
+  const accessToken = useAppSelectore((state) => state.auth.jwt);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
