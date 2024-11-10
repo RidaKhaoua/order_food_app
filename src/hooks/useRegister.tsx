@@ -63,7 +63,7 @@ const useRegister = ({closeLoginPopUp}:TUseRegister) => {
           color:"white"
         }
       })
-      navigate("/")
+      navigate("/order_food_app/")
 
     })  
     .catch((error) => {
