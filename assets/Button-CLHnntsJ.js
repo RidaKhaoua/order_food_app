@@ -1,1 +1,0 @@
-import{j as e}from"./index-Dahd5mT7.js";import"./index-D4n8Bx99.js";const x=({children:t,style:o,type:r="button",disabled:s=!1,className:n="",...u})=>e.jsx("button",{type:r,...u,style:o,disabled:s,className:n,children:t});export{x as B};
