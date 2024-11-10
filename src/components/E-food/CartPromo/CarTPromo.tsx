@@ -22,7 +22,7 @@ function CarTPromo({ discountVal }: TCartPromo) {
   const handleDiscount = () => {
     if (discountVal === -1) dispatch(resetDiscount());
    const timeOut = setTimeout(() => {
-      dispatch(discountTotalPrice(inputRef.current?.value));
+      dispatch(discountTotalPrice(inputRef.current?.value as string));
     }, 1000);
     return () => clearTimeout(timeOut);
   };
