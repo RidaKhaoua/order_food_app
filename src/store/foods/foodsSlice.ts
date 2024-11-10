@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { isString, TFood, TStatus } from "@types";
 import actGetFoodList from "./act/actGetFoodList";
 import actGetFoodListByCategory from "./act/actGetFoodListByCat";
@@ -23,10 +23,10 @@ const foodsSlice = createSlice({
   name: "foodList",
   initialState,
   reducers: {
-    discountTotalPrice: (state, action) => {
+    discountTotalPrice: (state, action: PayloadAction<string>) => {
       const discountName = action.payload;
       const getDiscountInfo = discountCode.filter(
-        (item) => item.discountName === discountName
+        (item) => item.discountName.toLocaleLowerCase() === discountName.toLocaleLowerCase()
       );
       if (!getDiscountInfo.length) {
         state.discountPrice = -1;
