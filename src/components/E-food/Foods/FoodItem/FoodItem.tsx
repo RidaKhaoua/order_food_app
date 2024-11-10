@@ -36,17 +36,18 @@ function FoodItem({
 
   const [isClicked, setIsClicked] = useState(false);
 
-  const handleAddFood = useCallback( (id: string | number) => {
-    dispatch(addFoodToCart(id));
+  const handleAddFood = useCallback( (documentId:  string) => {
+    dispatch(addFoodToCart(documentId));
   },[dispatch]);
 
-  const handleMinusFood = useCallback((id: string | number) => {
-    dispatch(minusFoodToCart(id));
+  const handleMinusFood = useCallback((documentId:  string) => {
+    dispatch(minusFoodToCart(documentId));
   },[dispatch]);
 
   const handleLikeFood = useCallback((isAuthenticated: boolean) => {
     if (isAuthenticated) {
       setIsLoading(true);
+      console.log(id)
       dispatch(actLikeProduct(id as number))
         .then(() => {
           setIsLoading(false);

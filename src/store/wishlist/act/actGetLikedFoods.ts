@@ -11,7 +11,6 @@ const actGetLikedFoods = createAsyncThunk(
   async (data: TData, thunkAPI) => {
     const { rejectWithValue, getState, signal } = thunkAPI;
     const { auth } = getState() as RootState;
-    console.log(auth.user?.id)
     try {
       const userWishlist = axios.get<{data:{ foodId: number }[]}>(
         `/wishlists?filters[userId][$eq]=${auth.user?.id}`,{

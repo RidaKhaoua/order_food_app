@@ -1,3 +1,3 @@
 import axios from "axios"
 
-axios.defaults.baseURL = "http://localhost:1337/api";
+axios.defaults.baseURL = "https://order-food-backend-klym.onrender.com/api";

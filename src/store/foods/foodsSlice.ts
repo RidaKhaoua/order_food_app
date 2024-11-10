@@ -46,7 +46,6 @@ const foodsSlice = createSlice({
     }),
       builder.addCase(actGetFoodList.fulfilled, (state, action) => {
         state.status = "fullfield";
-        console.log(action.payload)
         state.foodList = action.payload;
       }),
       builder.addCase(actGetFoodList.rejected, (state, action) => {

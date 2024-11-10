@@ -24,7 +24,7 @@ const categoriesSlice = createSlice({
             state.error = null;
         }),
         builder.addCase(actGetCategories.fulfilled, (state, action) => {
-            console.log(action)
+            
             state.status = "fullfield";
             state.categories = action.payload.data;
         }),
