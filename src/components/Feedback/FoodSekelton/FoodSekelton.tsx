@@ -17,7 +17,7 @@ function FoodSekelton() {
         foregroundColor="#ffffff">
         <rect x="4" y="335" rx="2" ry="2" width="183" height="7" />
         <rect x="7" y="297" rx="2" ry="2" width="66" height="5" />
-        <rect x="5" y="17" rx="2" ry="2" width="342" height="244" />
+        <rect x="5" y="17" rx="2" ry="2" width="220" height="244" />
         <rect x="6" y="365" rx="2" ry="2" width="17" height="28" />
       </ContentLoader>
     ));
