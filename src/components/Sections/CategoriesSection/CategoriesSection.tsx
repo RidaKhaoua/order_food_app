@@ -1,4 +1,5 @@
 import { Categories } from '@components/E-food'
+import CategorieHeading from '@components/E-food/Categories/CategorieHeading';
 import useCategorie from '@hooks/useCategorie';
 
 
@@ -7,6 +8,7 @@ function CategoriesSection() {
 
   return (
     <>
+        <CategorieHeading />
         <Categories data={categories} status={status} error={error}/>
     </>
   )

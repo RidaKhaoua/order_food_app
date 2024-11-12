@@ -4,7 +4,7 @@ import useFoodList from "@hooks/useFoodList";
 
 import FoodItem from "./FoodItem/FoodItem";
 import { TFood } from "@types";
-import { LottieHandler } from "@components/Feedback";
+// import { LottieHandler } from "@components/Feedback";
 
 const style = {
   display: "grid",
@@ -22,8 +22,8 @@ function Foods({ handleShowModal }: TFoods) {
   const { fullfoodInfo, status, error } = useFoodList();
   return (
     <>
-      <Loading status={status} error={error}>
-        {fullfoodInfo.length > 0 ? (
+      <Loading status={status} error={error} type="foods">
+        {fullfoodInfo.length > 0 && (
           <GridList<TFood>
             style={style}
             data={fullfoodInfo}
@@ -32,9 +32,7 @@ function Foods({ handleShowModal }: TFoods) {
             )}
             message="There no Food list"
           />
-        ) : (
-          <LottieHandler type="empty" message="There are no Foods" />
-        )}
+        ) }
       </Loading>
     </>
   );

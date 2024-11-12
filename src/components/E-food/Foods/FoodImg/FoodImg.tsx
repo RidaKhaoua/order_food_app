@@ -11,7 +11,7 @@ type TFoodImg = {
 function FoodImg({img}: TFoodImg) {
   return (
     <div className={food_img}>
-    <img src={img} alt="" />
+    <img src={img} alt="" loading="lazy" />
   </div>
   )
 }
